@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEVENON</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #f3f4f4;
+            color: #090404;
+            padding: 10px 0;
+            padding-left: 30px;
+            text-align: left;
+            position: relative;
+        }
+        .menu{
+            top: 20px;  
+            bottom: 10px;          
+        }
+        .menu-icon {
+            position: absolute;
+            right: 20px;
+            cursor: pointer;
+            font-size: 24px;
+        }
+        .menu-logo {
+            position: absolute;
+            left: 20px;
+        }
+        nav {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 70px;
+            right: 20px;
+            background: #35424a;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        nav a {
+            color: #ffffff;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+        }
+        nav a:hover {
+            background: #464e58;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .home, .about, .services, .contact, .clients {
+            background: #ffffff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background: #35424a;
+            color: #ffffff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .contact-links {
+            display: flex;
+            gap: 20px; /* Space between icons */
+            justify-content: center; /* Center the icons */
+            margin-top: 20px;
+        }
+        a {
+            text-decoration: none;
+            color: #333; /* Default color for links */
+        }
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px; /* Space between images */
+        }
+        .image-container img {
+            max-width: 100px; /* Adjust the size as needed */
+            height: auto;
+        }
+        .gallery img {
+            margin: 10px;
+            width: 25%;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+
+    <script>
+        function openFullscreen(img) {
+            // Create a full-screen image element
+            const fullScreenImg = document.createElement("img");
+            fullScreenImg.src = img.src;
+            fullScreenImg.style.position = "fixed";
+            fullScreenImg.style.top = "0";
+            fullScreenImg.style.left = "0";
+            fullScreenImg.style.width = "100%";
+            fullScreenImg.style.height = "100%";
+            fullScreenImg.style.objectFit = "contain";
+            fullScreenImg.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+            fullScreenImg.style.zIndex = "9999";
+            fullScreenImg.onclick = function() {
+                document.body.removeChild(fullScreenImg);
+            };
+    
+            document.body.appendChild(fullScreenImg);
+        }
+    </script>
+    <header>
+        <div class="menu">
+            <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+            <div class="menu-logo">
+                <img src="CONTENT/SEVENON_LOGO.png"  alt="SEVENON"> 
+            </div>
+        </div>
+        <nav id="navbar">
+            <a href="#home"> Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section id="home" class="home">
+            <h2>HOME</h2>
+            <p>Welcome to SEVENON ADVERTISEMENTS.
+                Let's create amazing together.
+                Where technology meets creativity in the
+                world of Digital Out-of-Home (DOOH)
+                advertising.
+            </p>
+            <video width="100%" height= auto autoplay muted controls>
+                <source src="CONTENT/LED Screen AD.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+
+        <section id="services" class="services">
+            <h2> SCREEN LOCATIONS            </h2>
+            <div id="screen1">
+                <img  width="100%" height= auto  src="CONTENT/Screen1.png" alt="Image 1">
+                <!-- <img src="CONTENT/Screen1.png" alt="Image 2"> -->
+            </div>
+            <div id="screen2">
+                <img width="100%" height= auto src="CONTENT/Screen2.png" alt="Image 2">
+                <!-- <img src="CONTENT/Screen1.png" alt="Image 4"> -->
+            </div>
+            <!-- <div class="image-container" id="image-container"></div> -->
+
+    <!-- <script>
+        // Select images from screen1 to screen3
+        const screens = document.querySelectorAll('#screen1, #screen2, #screen3');
+        const imageContainer = document.getElementById('image-container');
+
+        screens.forEach(screen => {
+            const images = screen.querySelectorAll('img');
+            images.forEach(img => {
+                // Clone the image to avoid moving it from its original location
+                const clonedImg = img.cloneNode(true);
+                imageContainer.appendChild(clonedImg);
+            });
+        });
+    </script> -->
+        </section>
+        <section id="clients" class="clients">
+            <h2>Clients</h2>
+            <div class="gallery">
+                <img src="CONTENT/Screen1.png" alt="Image 1" onclick="openFullscreen(this)">
+                <img src="CONTENT/Screen1.png" alt="Image 2" onclick="openFullscreen(this)">
+                <img src="CONTENT/Screen1.png" alt="Image 3" onclick="openFullscreen(this)">
+                <img src="CONTENT/Screen1.png" alt="Image 4" onclick="openFullscreen(this)">
+            </div>
+        </section>
+        <section id="about" class="about">
+            <h2>About</h2>
+            <ul>
+            <p>
+                We specialize in transforming traditional advertising
+                 into dynamic digital experiences that capture attention
+                  and deliver impact in real-time.
+                <br>
+                   We are committed to helping our clients succeed. 
+                   We want to make advertising simple, effective, and 
+                   exciting- turning screens into opportunities for your 
+                   brand to shine.
+                <br>
+            </p></ul>
+        </section>
+        <section id=" Our Mission" class="about">
+            <h2> Our Mission</h2>
+            <ul>
+            <p>At Sevenon ads
+                <br>
+                Our mission is to change the way brands connect with
+                people through digital screen advertising. We aim to
+                make ads more engaging, relevant, and impactful by
+                using smart technology and creative design. Our goal is
+                to bring your brand's message to life in busy public
+                spaces, helping you reach the right audience at the
+                right time
+                <br>
+            </p></ul>
+        </section>
+        <section id="Why Choose Us?" class="about">
+            <h2>Why Choose Us?</h2>
+            <ul>
+                <li>Dynamic Displays: We offer high-quality digital
+                screens with customizable content options.</li>
+                <li>Prime Locations: Reach your audience where they are,
+                from urban hotspots to popular venues.</li>
+                <li>Seamless Integration: Whether you're a local business
+                or a global brand, we make it easy to launch and
+                manage your advertising campaigns.</li>
+                <br></ul>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or need further information, feel free to reach out!</p>
+            <p>Email: <a href="mailto:sevenonadvertisements@gmail.com">sevenonadvertisements@gmail.com</a></p>
+            <p>Phone: (+91) 7997229595</p>
+            <div class="contact-links">
+                <a href="https://wa.me/7997229595" target="_blank" title="WhatsApp">
+                    
+                    <i class="fab fa-whatsapp"></i>
+
+                </a>
+                <a href="https://www.facebook.com/your-profile" target="_blank" title="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com/your-profile" target="_blank" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/your-profile" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Your SEVENON. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navbar = document.getElementById('navbar');
+            if (navbar.style.display === "flex") {
+                navbar.style.display = "none";
+            } else {
+                navbar.style.display = "flex";
+            }
+        }
+    </script>
+
+</body>
+</html>
