@@ -12,33 +12,30 @@
             padding: 0;
             background-color: #f4f4f4;
         }
-        header {
-            background: #f3f4f4;
-            color: #090404;
-            padding: 10px 0;
-            padding-left: 30px;
-            text-align: left;
-            position: relative;
-        }
-        .menu{
-            top: 20px;  
-            bottom: 10px;          
+        .menu{ 
+
+            position: fixed;
+            background: rgb(255, 255, 255); /* semi-transparent white */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* subtle shadow for depth */
+            border-radius: 5px; /* rounded corners */
+            height: 30px;
+            width: 100%;
         }
         .menu-icon {
-            position: absolute;
+            position: fixed;
             right: 20px;
             cursor: pointer;
             font-size: 24px;
         }
         .menu-logo {
-            position: absolute;
+            position: fixed;
             left: 20px;
         }
         nav {
             display: none;
             flex-direction: column;
-            position: absolute;
-            top: 70px;
+            position: fixed;
+            top: 40px;
             right: 20px;
             background: #35424a;
             border-radius: 5px;
@@ -54,7 +51,7 @@
             background: #464e58;
         }
         .container {
-            width: 80%;
+            width: 100%;
             margin: auto;
             overflow: hidden;
             background: #ffffff;
@@ -142,6 +139,7 @@
         }
     </script>
     <header>
+        <div>
         <div class="menu">
             <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
             <div class="menu-logo">
@@ -154,6 +152,7 @@
             <a href="#services">Services</a>
             <a href="#contact">Contact</a>
         </nav>
+    </div>
     </header>
 
     <div class="container">
